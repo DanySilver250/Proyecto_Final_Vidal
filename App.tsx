@@ -1,33 +1,18 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import type { RootStackParamList } from "./src/models/navigation";
-import { HomeScreen } from "./src/views/HomeScreen";
-//import { ReportsScreen } from "./src/views/ReportsScreen";
-import { CreateReportScreen } from "./src/views/CreateReportScreen";
+import LoginScreen from "./src/screens/LoginScreen";
+import SignUpScreen from './src/screens/SignUpScreen';
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <GestureHandlerRootView style={styles.root}>
-      <NavigationContainer>
-      <StatusBar style="auto" />
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Inicio" }} />
-        {/* <Stack.Screen name="Reports" component={ReportsScreen} options={{ title: "Reportes" }} /> */}
-        <Stack.Screen name="CreateReport" component={CreateReportScreen} options={{ title: "Crear Reporte" }} />
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="SignUp">
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-});
