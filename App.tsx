@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { StyleSheet } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-import type { RootStackParamList } from "./src/models/navigation";  
+import type { RootStackParamList } from "./src/models/navigation";
 import { HomeScreen } from "./src/views/HomeScreen";
 //import { ReportsScreen } from "./src/views/ReportsScreen";
 import { CreateReportScreen } from "./src/views/CreateReportScreen";
